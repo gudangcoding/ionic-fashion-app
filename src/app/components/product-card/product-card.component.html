@@ -1,0 +1,11 @@
+<ion-card>
+  <img [src]="product.imageUrl">
+
+  <ion-card-content>
+    <ion-label>
+      <p>{{product.price | currency}}</p>
+      <ion-icon [color]="product.liked ? 'primary' : ''" [name]="product.liked ? 'heart' : 'heart-outline'"></ion-icon>
+    </ion-label>
+    <h2>{{product.name | titlecase}}</h2>
+  </ion-card-content>
+</ion-card>

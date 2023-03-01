@@ -1,0 +1,36 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button>
+        <ion-icon slot="icon-only" name="menu-alt"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon slot="icon-only" name="notifications-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <ion-toolbar id="search-toolbar">
+    <ion-searchbar placeholder="Search your product..."></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- Categories -->
+  <app-home-slide-header title="Categories"></app-home-slide-header>
+  <ion-slides [options]="slideOpts">
+    <ion-slide *ngFor="let category of categories">
+      <app-category-card [category]="category"></app-category-card>
+    </ion-slide>
+  </ion-slides>
+
+  <!-- Featured Products -->
+  <app-home-slide-header title="Featured"></app-home-slide-header>
+  <app-product-slider [products]="featuredProducts"></app-product-slider>
+
+  <!-- Best Selling products -->
+  <app-home-slide-header title="Best Selling"></app-home-slide-header>
+  <app-product-slider [products]="bestSellingProducts"></app-product-slider>
+</ion-content>
